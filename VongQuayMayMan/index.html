@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#350b12">
+    <meta name="description" content="Vòng quay may mắn của siêu thị">
+    <title>Vòng quay may mắn</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="brand">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>ĐẶC QUYỀN KHÁCH HÀNG</span>
+      </header>
+
+      <section class="card" aria-labelledby="page-title">
+        <p class="eyebrow">THỬ VẬN MAY · NHẬN QUÀ LIỀN TAY</p>
+        <h1 id="page-title"><span class="title-line">Vòng quay</span><span class="title-line">may mắn</span></h1>
+        <p class="intro">Nhập số điện thoại để bắt đầu nhận quà may mắn</p>
+
+        <form id="spin-form" class="phone-step" novalidate>
+          <label for="phone">Số điện thoại</label>
+          <input
+            id="phone"
+            name="phone"
+            type="text"
+            inputmode="numeric"
+            autocomplete="off"
+            maxlength="10"
+            pattern="[0-9]{10}"
+            title="Vui lòng nhập đúng số điện thoại của bạn."
+            placeholder="Nhập số điện thoại của bạn"
+            required
+          >
+          <button id="spin-button" type="submit">Tiếp tục đến vòng quay <span aria-hidden="true">→</span></button>
+        </form>
+
+        <section class="spin-step" id="spin-step" aria-label="Vòng quay phần thưởng" hidden>
+          <p class="current-phone">SỐ ĐIỆN THOẠI THAM GIA <strong id="active-phone"></strong></p>
+          <div class="wheel-area">
+            <div class="wheel-halo" aria-hidden="true"></div>
+            <div class="bulb-ring" id="bulb-ring" aria-hidden="true"></div>
+            <div class="pointer" aria-hidden="true"></div>
+            <div
+              class="wheel"
+              id="wheel"
+              role="img"
+              aria-label="Vòng quay: Voucher 49.000 đồng, 1 gói Bim Bim, 1 gói Bánh Tăm Xoắn, 1 gói Ô Mai Mận"
+            >
+              <span class="wheel-label voucher-label" style="--angle: 45deg; --counter-angle: -45deg; --label-radius: 82px">
+                Voucher<br>49.000đ
+              </span>
+              <span class="wheel-label bim-label" style="--angle: 135deg; --counter-angle: -135deg; --label-radius: 82px">
+                1 gói<br>Bim Bim
+              </span>
+              <span class="wheel-label banh-label" style="--angle: 225deg; --counter-angle: -225deg; --label-radius: 82px">
+                1 gói Bánh<br>Tăm Xoắn
+              </span>
+              <span class="wheel-label omai-label" style="--angle: 315deg; --counter-angle: -315deg; --label-radius: 82px">
+                1 gói Ô Mai<br>Mận
+              </span>
+              <div class="wheel-center"><span>QUAY</span><strong>✦</strong></div>
+            </div>
+          </div>
+
+          <div class="win-card" id="win-card" hidden>
+            <div class="confetti" id="confetti" aria-hidden="true"></div>
+            <span class="win-star" aria-hidden="true">✦</span>
+            <p>CHÚC MỪNG BẠN</p>
+            <strong id="win-prize"></strong>
+            <span class="win-caption">Phần quà may mắn của bạn</span>
+          </div>
+
+          <button id="spin-now-button" type="button">Quay ngay <span aria-hidden="true">✦</span></button>
+          <button id="change-phone-button" class="text-button" type="button">← Đổi số điện thoại</button>
+        </section>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <p class="privacy-note"><span aria-hidden="true">✦</span> Mỗi số điện thoại được tham gia một lần</p>
+      </section>
+      <footer><span aria-hidden="true">✧</span> Chúc bạn may mắn và mua sắm vui vẻ <span aria-hidden="true">✧</span></footer>
+    </main>
+  </body>
+</html>
